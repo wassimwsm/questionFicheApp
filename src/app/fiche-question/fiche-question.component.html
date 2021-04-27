@@ -1,3 +1,4 @@
+
 <div class="d-flex justify-content-end nouveauBtn">
   <button type="button" class="btn  btn-success " data-toggle="modal"
     (click)="addModal.show();addModal.config.backdrop='static';addModal.config.keyboard=false;">Nouveau</button>
@@ -7,6 +8,7 @@
     <input type="text" class="form-control searchBtn" [(ngModel)]="searchText">
     <span class="fa fa-search form-control-feedback" (click)="searchQuestionClick()"></span>
   </div>
+  <div class="listBody">
   <table class="table">
     <thead>
       <tr>
@@ -37,6 +39,7 @@
       <a class="page-link">{{element+1}}</a>
     </li>
   </ul>
+</div>
 </div>
 
 
@@ -154,9 +157,9 @@
           </div>
           <button *ngIf="questionForm.get('type').value=='CHECKBOX' || questionForm.get('type').value=='LIST'"
             type="button" class="btn btn-dark" (click)="newProp()">New</button>
-          <p>
+         <!--  <p>
             Form Status: {{ questionForm.status }}
-          </p>
+          </p> -->
         </div>
 
       </div>
@@ -184,7 +187,7 @@
         <p>Are you sure you want to delete this question: <br /> {{questionDelete?.name}}</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-success" (click)="deleteModal.hide()">Annuler</button>
+        <button type="button" class="btn btn-secondary" (click)="deleteModal.hide()">Annuler</button>
         <button type="button" class="btn btn-danger" (click)="deleteQuestion()">Supprimer</button>
       </div>
     </div><!-- /.modal-content -->
