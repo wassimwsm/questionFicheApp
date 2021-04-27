@@ -8,6 +8,7 @@ import { P404Component } from './views/error/404.component';
 import { P500Component } from './views/error/500.component';
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
+import { FicheQuestionComponent } from './fiche-question/fiche-question.component';
 
 export const routes: Routes = [
   {
@@ -47,9 +48,16 @@ export const routes: Routes = [
     path: '',
     component: DefaultLayoutComponent,
     data: {
-      title: 'Home'
+      title: 'Question'
     },
     children: [
+      {
+        path: 'questions',
+        component: FicheQuestionComponent,
+        data: {
+          title: 'Fiche question'
+        }
+      },
       {
         path: 'base',
         loadChildren: () => import('./views/base/base.module').then(m => m.BaseModule)

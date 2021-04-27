@@ -1,1 +1,172 @@
 // Here you can add other styles
+
+main{
+    background-color:white;
+}
+
+app-footer p{
+    width: 100%;
+}
+
+a {
+    color: #8a818f;
+}
+
+.breadcrumb-item.active {
+    color: #2196f3;
+}
+
+.main .navbar-toggler {
+    min-width: 50px;
+    padding: 0.25rem 0;
+}
+
+.main .navbar-toggler-icon {
+    height: 23px;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%2373818f' stroke-width='2.25' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.btn-success {
+    color: #fff;
+    background-color: #0E9A0C;
+    border-color: #0E9A0C;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1298B6;
+    border-color: #1298B6;
+}
+
+.btn-danger {
+    color: #fff;
+    background-color: #C51414;
+    border-color: #C51414;
+}
+
+.breadcrumb {
+    background-color: #F1F1F1;
+}
+
+.sidebar {
+    background: #878787;
+}
+
+.sidebar .sidebar-minimizer {
+    background-color: #636363;
+
+}
+
+.sidebar .nav-link.active {
+    background: #454545;
+}
+
+.sidebar .nav-link {
+    background: #636363;
+}
+
+.btn {
+    padding: 0rem 0.8rem;
+    border-radius: 0.4rem;
+}
+
+.nouveauBtn{
+    margin: 13px 0px;
+}
+
+.card-body {
+    background-color: #F8F8F8;
+    border-radius: 2rem;
+}
+
+.table thead th {
+    border-bottom: unset;
+    background-color: #5C5C5C;
+    border-radius: 2rem;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.table {
+    background-color: white;
+    border-radius: 1rem;
+    border-collapse: unset;
+}
+
+.table td {
+    
+    border-top: unset;
+    background-color: #F8F8F8;
+    border-radius: 2rem;
+}
+
+.page-item.active .page-link {
+  
+    background-color: #454545;
+    border-color: #454545;
+}
+.page-link {
+    cursor: pointer;
+}
+.page-item .page-link {
+    z-index: 1;
+    color: #fff !important;
+    background-color: #5C5C5C;
+    border-color: #5C5C5C;
+
+}
+
+.searchBtn{
+    margin-bottom: 8px;
+    border: solid 2px #E5E5E5;
+    //width: 25% !important;
+}
+
+.has-search .form-control {
+    padding-right: 25px;
+    display: inline;
+    width:100% !important;
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    //pointer-events: none;
+    cursor: pointer;
+    color: #aaa;
+    margin-left:7.4rem;
+    margin-left:-35px;
+}
+
+.modal-content {
+    border-radius: 1rem;
+    background-color: #F3F3F3;
+}
+
+.modal-content input[type="text"] {
+    border: solid 2px #E5E5E5;
+    width: 100%;
+}
+
+.modal-content select {
+border-radius: 0.5rem;
+margin-left:10px;
+}
+
+.bodyForm{
+    background-color: white;
+    border-radius: 0.9rem;
+    padding:10px;
+}
+.bodyForm .row{
+    margin-left: 0px;
+}
+
+.bodyForm .form-group{
+    margin-bottom:unset;
+}
