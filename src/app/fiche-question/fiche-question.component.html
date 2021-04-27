@@ -1,7 +1,6 @@
-
 <div class="d-flex justify-content-end nouveauBtn">
   <button type="button" class="btn  btn-success " data-toggle="modal"
-    (click)="addModal.show();addModal.config.backdrop='static';addModal.config.keyboard=false;">Nouveau</button>
+    (click)="clearForm();addModal.show();addModal.config.backdrop='static';addModal.config.keyboard=false;">Nouveau</button>
 </div>
 <div class="card-body nouveauBtn">
   <div class="form-group has-search mr-sm-2 offset-9 ">
@@ -9,37 +8,37 @@
     <span class="fa fa-search form-control-feedback" (click)="searchQuestionClick()"></span>
   </div>
   <div class="listBody">
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Libellé</th>
-        <th>Type</th>
-        <th>Nombre Propositions </th>
-        <th>Action</th>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Libellé</th>
+          <th>Type</th>
+          <th>Nombre Propositions </th>
+          <th>Action</th>
 
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let item of pagedItems[currentPage]">
-        <td> {{item.name}}</td>
-        <td> {{item.type}}</td>
-        <td>{{item.propositions.length}}</td>
-        <td><button type="button" class="btn  btn-primary" data-toggle="modal"
-            (click)="getModifierQuestion(item);modifyModal.show();modifyModal.config.backdrop='static';modifyModal.config.keyboard=false;">Modifier</button>
-          <button type="button" class="btn  btn-danger" data-toggle="modal" (click)="getSupprimerQuestion(item);deleteModal.show();deleteModal.config.backdrop='static';
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of pagedItems[currentPage]">
+          <td> {{item.name}}</td>
+          <td> {{item.type}}</td>
+          <td>{{item.propositions.length}}</td>
+          <td><button type="button" class="btn  btn-primary" data-toggle="modal"
+              (click)="getModifierQuestion(item);modifyModal.show();modifyModal.config.backdrop='static';modifyModal.config.keyboard=false;">Modifier</button>
+            <button type="button" class="btn  btn-danger" data-toggle="modal" (click)="getSupprimerQuestion(item);deleteModal.show();deleteModal.config.backdrop='static';
             deleteModal.config.keyboard=false;">Supprimer</button>
 
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <ul class="pagination">
-    <li class="page-item" *ngFor="let element of range(pagedItems.length, currentPage, currentPage + steps) "
-      [ngClass]="{active: element == currentPage}" (click)="setPage(element)">
-      <a class="page-link">{{element+1}}</a>
-    </li>
-  </ul>
-</div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <ul class="pagination">
+      <li class="page-item" *ngFor="let element of range(pagedItems.length, currentPage, currentPage + steps) "
+        [ngClass]="{active: element == currentPage}" (click)="setPage(element)">
+        <a class="page-link">{{element+1}}</a>
+      </li>
+    </ul>
+  </div>
 </div>
 
 
@@ -149,15 +148,17 @@
 
         <div class="bodyForm"
           [hidden]="!(questionForm.get('type').value=='CHECKBOX' || questionForm.get('type').value=='LIST')">
-          <div [hidden]="!(questionForm.get('type').value=='CHECKBOX' || questionForm.get('type').value=='LIST')"
-            class="form-group row align-middle" *ngFor="let prop of listPropositions; let i=index">
+
+
+          <div class="form-group row align-middle" *ngFor="let prop of listPropositions; let i=index">
             <input type="text" class="form-control col-md-11 col-lg-11 col-sm-11 " [value]="prop.texte"
               (keyup)="updateProposition($event,i)" />
             <i class="fa fa-minus-circle" (click)="deleteProp(i)"></i>
           </div>
-          <button *ngIf="questionForm.get('type').value=='CHECKBOX' || questionForm.get('type').value=='LIST'"
-            type="button" class="btn btn-dark" (click)="newProp()">New</button>
-         <!--  <p>
+
+
+          <button type="button" class="btn btn-dark" (click)="newProp()">New</button>
+          <!--  <p>
             Form Status: {{ questionForm.status }}
           </p> -->
         </div>
